@@ -1,0 +1,13 @@
+Package: rangr
+Type: Package
+Title: Extended Functions For Manipulating GenomicRanges Objects
+Version: 0.0.9
+Authors@R: person("Ross", "Thorne", email = "rmwthorne@googlemail.com",
+                  role = c("aut", "cre"))
+Description: Rangr is a collection of import, manipulation and export functions
+  for dealing with genomic ranges objects.
+License: What license is it under?
+LazyData: TRUE
+RoxygenNote: 5.0.1
+Imports:
+  GenomicRanges
