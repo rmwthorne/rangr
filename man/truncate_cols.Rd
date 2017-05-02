@@ -29,4 +29,3 @@ df
 df <- truncate_cols(df, pattern="re{0,}?.$")
 df
 }
-

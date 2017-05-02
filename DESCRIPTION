@@ -8,6 +8,6 @@ Description: Rangr is a collection of import, manipulation and export functions
   for dealing with genomic ranges objects.
 License: What license is it under?
 LazyData: TRUE
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 Imports:
   GenomicRanges

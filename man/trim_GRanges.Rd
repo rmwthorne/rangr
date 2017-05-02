@@ -17,4 +17,3 @@ A genomic ranges object.
 \description{
 Removes out-of-bounds intervals, given a specific genome build.
 }
-

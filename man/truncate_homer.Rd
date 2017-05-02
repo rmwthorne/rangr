@@ -10,7 +10,7 @@ truncate_homer(df, pattern = ".Tag.Count.{0,}?.$", replacement = "")
 \item{df}{A data frame.}
 
 \item{pattern}{character string containing a regular expression to trim.
-Defaults to ".Tag.Count.{0,}?.$".}
+Defaults to ".Tag.Count.\{0,\}?.$".}
 
 \item{replacement}{a replacement for matched pattern in sub and gsub.
 Defaults to "".}
@@ -21,4 +21,3 @@ A dataframe with truncated columns.
 \description{
 Truncates homer column names matching .Tag.Count(...)
 }
-
