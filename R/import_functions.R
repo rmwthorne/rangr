@@ -5,6 +5,7 @@
 #' @param pattern character string containing a regular expression to trim.
 #' @param replacement a replacement for matched pattern in sub and gsub.
 #' @return A dataframe with truncated columns.
+#' @export
 #' @examples
 #' gr <- GRanges(Rle(c("chr2", "chr2", "chr1", "chr3"), c(1, 3, 2, 4)),
 #' IRanges(1:10, width=10:1, names=head(letters, 10)),
@@ -25,7 +26,7 @@ truncate_cols <- function(df, pattern = pattern, replacement = replacement) {
 #'
 #' @param df A data frame.
 #' @param pattern character string containing a regular expression to trim.
-#' Defaults to ".Tag.Count.{0,}?.$".
+#' Defaults to ".Tag.Count.\{0,\}?.$".
 #' @param replacement a replacement for matched pattern in sub and gsub.
 #' Defaults to "".
 #' @return A dataframe with truncated columns.

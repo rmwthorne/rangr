@@ -12,6 +12,7 @@
 #' Rle(strand(c("-", "+", "*", "+", "-")), c(1, 2, 2, 3, 2)),
 #' score=1:10, GC=seq(1, 0, length=10))
 #' write_bed(gr, path = "output/file.ucsc.bed", ucsc = TRUE)
+#' @export
 
 write_bed <- function(gr, path = "output/", ucsc = F, ucsc.col = "",
                       name.col = "", score.col = "") {
