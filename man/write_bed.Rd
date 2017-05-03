@@ -4,15 +4,15 @@
 \alias{write_bed}
 \title{Save a GRanges object to a bed file.}
 \usage{
-write_bed(gr, path = "output/", ucsc = F, ucsc.col = "", name.col = "",
-  score.col = "")
+write_bed(gr, path = "", ucsc_name = F)
 }
 \arguments{
-\item{gr}{A GRanges object.}
+\item{gr}{A \code{\link[GenomicRanges]{GenomicRanges}} object.}
 
 \item{path}{Path to write to.}
 
-\item{ucsc_name}{if \code{TRUE}, will add a track name for UCSC.}
+\item{ucsc_name}{A header track name. Required for visualisation by UCSC
+genome browser.}
 }
 \value{
 writes an object to a specific path.
@@ -25,5 +25,6 @@ gr <- GRanges(Rle(c("chr2", "chr2", "chr1", "chr3"), c(1, 3, 2, 4)),
 IRanges(1:10, width=10:1, names=head(letters, 10)),
 Rle(strand(c("-", "+", "*", "+", "-")), c(1, 2, 2, 3, 2)),
 score=1:10, GC=seq(1, 0, length=10))
-write_bed(gr, path = "output/file.ucsc.bed", ucsc = TRUE)
+
+write_bed(gr, path = "output/file.ucsc.bed", ucsc = "Example track")
 }

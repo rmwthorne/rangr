@@ -3,3 +3,4 @@
 export(trim_GRanges)
 export(truncate_cols)
 export(write_bed)
+export(write_mig)

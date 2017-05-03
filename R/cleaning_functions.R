@@ -1,12 +1,13 @@
 
-#' Removes out-of-bounds intervals, given a specific genome build.
+#' Remove out-of-bounds ranges, using a given genome build
 #'
-#' @param gr a genomic ranges object.
-#' @param genome a genome build. Defaults to "hg19"
-#' @return A genomic ranges object.
+#' @param gr A \code{GenomicRanges} object.
+#' @param genome A genome build, e.g. hg19
+#' @return a filtered \code{GenomicRanges} object.
 #' @export
 
-trim_GRanges <- function(gr, genome = "hg19") {
-  seqinfo(gr) <- Seqinfo(genome = genome)
-  gr <- trim(gr)
+trim_GRanges <- function(gr, genome = "") {
+
+  genome(gr) <- genome
+  gr <- GenomicRanges::trim(gr)
 }

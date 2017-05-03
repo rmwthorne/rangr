@@ -2,18 +2,18 @@
 % Please edit documentation in R/cleaning_functions.R
 \name{trim_GRanges}
 \alias{trim_GRanges}
-\title{Removes out-of-bounds intervals, given a specific genome build.}
+\title{Remove out-of-bounds ranges, using a given genome build}
 \usage{
-trim_GRanges(gr, genome = "hg19")
+trim_GRanges(gr, genome = "")
 }
 \arguments{
-\item{gr}{a genomic ranges object.}
+\item{gr}{A \code{GenomicRanges} object.}
 
-\item{genome}{a genome build. Defaults to "hg19"}
+\item{genome}{A genome build, e.g. hg19}
 }
 \value{
-A genomic ranges object.
+a filtered \code{GenomicRanges} object.
 }
 \description{
-Removes out-of-bounds intervals, given a specific genome build.
+Remove out-of-bounds ranges, using a given genome build
 }
