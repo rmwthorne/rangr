@@ -1,3 +1,24 @@
+#' Reads a HOMER peak/position file.
+#'
+#' \code{read_pos} takes a HOMER peak file as input and tries to automatically find the columns that describe genomic ranges. It returns them as a GRanges object.
+#'
+#' @param file A HOMER-formatted peak file (PeakID, chr, start, stop ...)
+#' @param keep_all If \code{TRUE}, will keep all metadata columns.
+#' @param message Include messages for column parsing?
+#' @return A GenomicRanges object
+#' @export
+
+read_pos <- function(file, keep_all = F, message = F) {
+  # Read in the header
+  header <- readr::read_lines(file, n_max = 50)
+  # Grab the column names from line starting #PeakID...
+  colnames <- header %>%
+    subset(., grepl("^#PeakID", ., ignore.case = T)) %>%
+    strsplit("\t")
+  # Read in the file
+  read_tsv(file, col_names = colnames[[1]], comment = "#", ) %>%
+    makeGRangesFromDataFrame(keep.extra.columns = keep_all)
+}
 
 #' Truncates long column names matching pattern.
 #'
